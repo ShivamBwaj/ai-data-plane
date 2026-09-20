@@ -1,5 +1,7 @@
 # AI Data Plane
 
+**[Live showcase →](https://ai-data-plane-showcase.netlify.app)** (static one-pager with the benchmark results and architecture diagram; `site/index.html` in this repo)
+
 An AI Data Plane sits between an LLM and a raw database: instead of dumping tables
 into a prompt and hoping the model infers relationships and business definitions
 correctly, the model queries through a **semantic layer** (business concepts,

@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Data Plane — semantic layer for LLM analytics</title>
+<meta name="description" content="A semantic layer, permission layer, and query planner between an LLM and Postgres — benchmarked against raw text-to-SQL across 500 questions." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0b0d;
+    --bg-elev: #121317;
+    --bg-elev-2: #191b20;
+    --border: #26282f;
+    --text: #eef0f3;
+    --text-dim: #9a9ea8;
+    --text-faint: #63676f;
+    --accent: #7c8cff;
+    --accent-soft: rgba(124,140,255,0.12);
+    --good: #4ade80;
+    --good-soft: rgba(74,222,128,0.12);
+    --bad: #f87171;
+    --bad-soft: rgba(248,113,113,0.12);
+    --raw: #565c68;
+    --semantic: #7c8cff;
+    --radius: 14px;
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  code, .mono { font-family: var(--font-mono); }
+
+  /* ---- Nav ---- */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(12px);
+    background: rgba(10,11,13,0.75);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+  .brand .dot { width: 9px; height: 9px; border-radius: 3px; background: var(--accent); box-shadow: 0 0 14px var(--accent); }
+  .navlinks { display: flex; gap: 28px; font-size: 14px; color: var(--text-dim); }
+  .navlinks a { text-decoration: none; transition: color .15s; }
+  .navlinks a:hover { color: var(--text); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 16px; border-radius: 9px; font-size: 14px; font-weight: 600;
+    text-decoration: none; border: 1px solid var(--border); transition: all .15s;
+  }
+  .btn-primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .btn-primary:hover { opacity: .88; }
+  .btn-ghost { color: var(--text); background: transparent; }
+  .btn-ghost:hover { background: var(--bg-elev-2); border-color: #363944; }
+
+  /* ---- Hero ---- */
+  header.hero { padding: 96px 0 72px; position: relative; overflow: hidden; }
+  header.hero::before {
+    content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+    width: 900px; height: 500px; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(124,140,255,0.16), transparent);
+    pointer-events: none;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12.5px; font-weight: 600; color: var(--accent);
+    background: var(--accent-soft); border: 1px solid rgba(124,140,255,0.25);
+    padding: 6px 12px; border-radius: 100px; margin-bottom: 22px;
+  }
+  h1 {
+    font-size: clamp(34px, 5.5vw, 58px); line-height: 1.05; letter-spacing: -0.03em;
+    font-weight: 800; margin: 0 0 20px; max-width: 780px;
+  }
+  h1 .grad { background: linear-gradient(90deg, #7c8cff, #a78bfa); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lede { font-size: 19px; color: var(--text-dim); max-width: 620px; margin: 0 0 36px; }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 56px; }
+  .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .hero-stat { background: var(--bg-elev); padding: 20px 18px; }
+  .hero-stat .num { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; }
+  .hero-stat .num.up { color: var(--good); }
+  .hero-stat .lbl { font-size: 12.5px; color: var(--text-faint); margin-top: 4px; }
+
+  /* ---- Sections ---- */
+  section { padding: 88px 0; border-top: 1px solid var(--border); }
+  .section-head { margin-bottom: 44px; max-width: 640px; }
+  .section-tag { font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: 12px; }
+  h2 { font-size: clamp(24px, 3.2vw, 34px); letter-spacing: -0.02em; margin: 0 0 14px; font-weight: 750; }
+  .section-desc { color: var(--text-dim); font-size: 16px; }
+
+  /* problem/solution */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 760px) { .split { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 28px;
+  }
+  .card h3 { margin: 0 0 10px; font-size: 17px; font-weight: 700; display: flex; align-items: center; gap: 9px; }
+  .card p { margin: 0; color: var(--text-dim); font-size: 14.5px; }
+  .card.problem h3::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--bad); }
+  .card.solution h3::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--good); }
+
+  /* architecture */
+  .diagram {
+    background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 36px 24px;
+  }
+  .diagram svg { display: block; margin: 0 auto; width: 100%; max-width: 640px; height: auto; }
+  .layer-legend { display: flex; gap: 18px 22px; flex-wrap: wrap; margin-top: 28px; font-size: 13.5px; color: var(--text-dim); }
+  .layer-legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .layer-legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+
+  /* benchmark */
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 40px; }
+  @media (max-width: 900px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+  .stat-card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+  .stat-card .lbl { font-size: 12.5px; color: var(--text-faint); margin-bottom: 12px; }
+  .stat-card .row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 3px; }
+  .stat-card .row .v { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
+  .stat-card .row .who { font-size: 11.5px; color: var(--text-faint); }
+  .stat-card .vs { font-size: 12.5px; color: var(--text-faint); margin-top: 6px; }
+  .pill { display: inline-block; margin-top: 10px; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 100px; }
+  .pill.good { background: var(--good-soft); color: var(--good); }
+  .pill.bad { background: var(--bad-soft); color: var(--bad); }
+  .pill.neutral { background: var(--bg-elev-2); color: var(--text-dim); }
+
+  .bars { background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
+  .bar-row { margin-bottom: 22px; }
+  .bar-row:last-child { margin-bottom: 0; }
+  .bar-row .bar-head { display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 8px; }
+  .bar-row .bar-head .name { color: var(--text-dim); }
+  .bar-track { height: 10px; background: var(--bg-elev-2); border-radius: 6px; overflow: hidden; margin-bottom: 5px; position: relative; }
+  .bar-fill { height: 100%; border-radius: 6px; transition: width 1s cubic-bezier(.2,.8,.2,1); width: 0; }
+  .bar-fill.raw { background: var(--raw); }
+  .bar-fill.semantic { background: linear-gradient(90deg, #7c8cff, #a78bfa); }
+  .bar-mini-lbl { font-size: 11.5px; color: var(--text-faint); display: flex; justify-content: space-between; }
+
+  /* engineering story */
+  .bug-list { display: grid; gap: 14px; }
+  .bug { display: grid; grid-template-columns: 40px 1fr; gap: 18px; background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+  .bug .n { font-family: var(--font-mono); font-weight: 700; color: var(--accent); font-size: 15px; }
+  .bug h4 { margin: 0 0 8px; font-size: 15.5px; font-weight: 700; }
+  .bug p { margin: 0; color: var(--text-dim); font-size: 14px; }
+  .bug code { background: var(--bg-elev-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; color: #c4c9ff; }
+
+  /* stack */
+  .chips { display: flex; flex-wrap: wrap; gap: 9px; }
+  .chip {
+    font-family: var(--font-mono); font-size: 12.5px; color: var(--text-dim);
+    background: var(--bg-elev); border: 1px solid var(--border); padding: 7px 12px; border-radius: 8px;
+  }
+
+  footer { padding: 48px 0 64px; text-align: center; color: var(--text-faint); font-size: 13.5px; border-top: 1px solid var(--border); }
+  footer a { color: var(--text-dim); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 720px) {
+    .navlinks { display: none; }
+    .brand { font-size: 14px; white-space: nowrap; }
+    header.hero { padding: 64px 0 48px; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    section { padding: 60px 0; }
+    .stat-grid { grid-template-columns: 1fr; }
+    .bug { grid-template-columns: 28px 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span> AI Data Plane</div>
+    <div class="navlinks">
+      <a href="#problem">Problem</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#benchmark">Benchmark</a>
+      <a href="#engineering">Engineering</a>
+    </div>
+    <a class="btn btn-ghost" href="https://github.com/ShivamBwaj/ai-data-plane" target="_blank" rel="noopener">GitHub &rarr;</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">● 500-question benchmark, ground-truth scored</div>
+    <h1>A semantic layer between your LLM<br>and <span class="grad">raw SQL hallucination.</span></h1>
+    <p class="lede">
+      Text-to-SQL tools hand a model your schema and hope it infers business meaning and access control.
+      This replaces that guess with a governed data plane — semantic layer, permission layer, query
+      planner — and proves the difference with a real, ground-truth benchmark.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="https://github.com/ShivamBwaj/ai-data-plane" target="_blank" rel="noopener">View source on GitHub</a>
+      <a class="btn btn-ghost" href="#benchmark">See the numbers ↓</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num up">+41%</div><div class="lbl">relative correctness vs. raw SQL</div></div>
+      <div class="hero-stat"><div class="num">500</div><div class="lbl">benchmarked questions, both pipelines</div></div>
+      <div class="hero-stat"><div class="num">2.0%</div><div class="lbl">schema hallucination (tied w/ raw)</div></div>
+      <div class="hero-stat"><div class="num">3</div><div class="lbl">real bugs found chasing the numbers</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="problem">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">The problem</div>
+      <h2>Raw schema access makes the model guess at things that aren't guesses.</h2>
+      <p class="section-desc">Two failures follow directly from "LLM → raw SQL": invented business logic, and no way to prove access control was ever actually enforced.</p>
+    </div>
+    <div class="split">
+      <div class="card problem">
+        <h3>Business meaning is implicit</h3>
+        <p>Nothing in a <code class="mono">subscriptions</code> table tells you what "churn" means, whether MRR includes trials, or how CSAT should be aggregated. The model invents an answer — differently, each time it's asked.</p>
+      </div>
+      <div class="card problem">
+        <h3>Permissions are a suggestion</h3>
+        <p>"Don't show PII" in a system prompt can't be proven, audited, or enforced. If the model can see the schema, it can query anything in it — and sometimes will, regardless of instructions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="architecture">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">The solution</div>
+      <h2>Three layers between the model and Postgres.</h2>
+      <p class="section-desc">The model never sees raw tables. It plans against retrieved, role-scoped business context — and every generated query is independently re-checked against the real schema and permissions before it's allowed to run.</p>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Architecture diagram: AI agent through semantic, permission, and query planner layers to Postgres">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#4b4f5a"/>
+          </marker>
+        </defs>
+        <!-- agent -->
+        <rect x="290" y="10" width="140" height="46" rx="10" fill="#191b20" stroke="#2c2f38"/>
+        <text x="360" y="38" text-anchor="middle" fill="#eef0f3" font-family="Inter,sans-serif" font-size="14" font-weight="700">AI Agent</text>
+
+        <line x1="360" y1="56" x2="360" y2="88" stroke="#4b4f5a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+        <!-- data plane container -->
+        <rect x="40" y="88" width="640" height="120" rx="14" fill="none" stroke="#26282f" stroke-dasharray="4 4"/>
+        <text x="60" y="76" fill="#63676f" font-family="JetBrains Mono,monospace" font-size="11" letter-spacing="1">DATA PLANE</text>
+
+        <!-- three boxes -->
+        <g>
+          <rect x="68" y="118" width="176" height="66" rx="10" fill="#14161c" stroke="#7c8cff" stroke-width="1.4"/>
+          <text x="156" y="145" text-anchor="middle" fill="#eef0f3" font-family="Inter,sans-serif" font-size="13.5" font-weight="700">Semantic Layer</text>
+          <text x="156" y="163" text-anchor="middle" fill="#9a9ea8" font-family="Inter,sans-serif" font-size="11">metrics · entities · glossary</text>
+        </g>
+        <g>
+          <rect x="272" y="118" width="176" height="66" rx="10" fill="#14161c" stroke="#a78bfa" stroke-width="1.4"/>
+          <text x="360" y="145" text-anchor="middle" fill="#eef0f3" font-family="Inter,sans-serif" font-size="13.5" font-weight="700">Permission Layer</text>
+          <text x="360" y="163" text-anchor="middle" fill="#9a9ea8" font-family="Inter,sans-serif" font-size="11">role → table/col/row policy</text>
+        </g>
+        <g>
+          <rect x="476" y="118" width="176" height="66" rx="10" fill="#14161c" stroke="#4ade80" stroke-width="1.4"/>
+          <text x="564" y="145" text-anchor="middle" fill="#eef0f3" font-family="Inter,sans-serif" font-size="13.5" font-weight="700">Query Planner</text>
+          <text x="564" y="163" text-anchor="middle" fill="#9a9ea8" font-family="Inter,sans-serif" font-size="11">plan → guard → execute</text>
+        </g>
+
+        <line x1="360" y1="90" x2="156" y2="118" stroke="#4b4f5a" stroke-width="1.3"/>
+        <line x1="360" y1="90" x2="360" y2="118" stroke="#4b4f5a" stroke-width="1.3"/>
+        <line x1="360" y1="90" x2="564" y2="118" stroke="#4b4f5a" stroke-width="1.3"/>
+
+        <line x1="156" y1="184" x2="360" y2="210" stroke="#4b4f5a" stroke-width="1.3"/>
+        <line x1="360" y1="184" x2="360" y2="210" stroke="#4b4f5a" stroke-width="1.3"/>
+        <line x1="564" y1="184" x2="360" y2="210" stroke="#4b4f5a" stroke-width="1.3"/>
+
+        <line x1="360" y1="212" x2="360" y2="244" stroke="#4b4f5a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+        <rect x="250" y="246" width="220" height="46" rx="10" fill="#191b20" stroke="#2c2f38"/>
+        <text x="360" y="274" text-anchor="middle" fill="#eef0f3" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600">Postgres (app_readonly)</text>
+      </svg>
+      <div class="layer-legend">
+        <span><i style="background:#7c8cff"></i> retrieved via pgvector, scoped to the caller's role</span>
+        <span><i style="background:#a78bfa"></i> enforced on the parsed SQL AST, not the prompt</span>
+        <span><i style="background:#4ade80"></i> SELECT-only DB role as the final backstop</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="benchmark">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">The benchmark</div>
+      <h2>500 questions, ground truth computed before either pipeline runs.</h2>
+      <p class="section-desc">No LLM-as-judge. Every question comes from one of 16 metric templates with known-correct SQL; the expected numeric answer is computed directly from Postgres first. "Correct" means the pipeline's number matches it.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="lbl">Answer correctness</div>
+        <div class="row"><span class="v">52.2%</span><span class="who">AI Data Plane</span></div>
+        <div class="vs">vs 37.0% raw baseline</div>
+        <div class="pill good">+41% relative</div>
+      </div>
+      <div class="stat-card">
+        <div class="lbl">SQL execution success</div>
+        <div class="row"><span class="v">85.8%</span><span class="who">AI Data Plane</span></div>
+        <div class="vs">vs 83.0% raw baseline</div>
+        <div class="pill good">+2.8pp</div>
+      </div>
+      <div class="stat-card">
+        <div class="lbl">Schema hallucination</div>
+        <div class="row"><span class="v">2.0%</span><span class="who">AI Data Plane</span></div>
+        <div class="vs">vs 2.0% raw baseline</div>
+        <div class="pill neutral">tied</div>
+      </div>
+      <div class="stat-card">
+        <div class="lbl">Avg rows scanned</div>
+        <div class="row"><span class="v">0.86</span><span class="who">AI Data Plane</span></div>
+        <div class="vs">vs 1.25 raw baseline</div>
+        <div class="pill good">-31%</div>
+      </div>
+    </div>
+
+    <div class="bars" id="bars">
+      <div class="bar-row" data-raw="37.0" data-sem="52.2">
+        <div class="bar-head"><span class="name">Answer correctness</span></div>
+        <div class="bar-track"><div class="bar-fill semantic"></div></div>
+        <div class="bar-mini-lbl"><span>AI Data Plane — 52.2%</span></div>
+        <div class="bar-track"><div class="bar-fill raw"></div></div>
+        <div class="bar-mini-lbl"><span>Raw baseline — 37.0%</span></div>
+      </div>
+      <div class="bar-row" data-raw="83.0" data-sem="85.8" style="margin-top:28px">
+        <div class="bar-head"><span class="name">SQL execution success</span></div>
+        <div class="bar-track"><div class="bar-fill semantic"></div></div>
+        <div class="bar-mini-lbl"><span>AI Data Plane — 85.8%</span></div>
+        <div class="bar-track"><div class="bar-fill raw"></div></div>
+        <div class="bar-mini-lbl"><span>Raw baseline — 83.0%</span></div>
+      </div>
+    </div>
+
+    <p style="color:var(--text-faint); font-size:13px; margin-top:18px;">
+      Tradeoff: +36% latency and +94% tokens/query from the added retrieval and context — the cost of grounding.
+      Full methodology and per-metric breakdown in <a href="https://github.com/ShivamBwaj/ai-data-plane/blob/master/README.md" style="color:var(--accent)">README.md</a>.
+    </p>
+  </div>
+</section>
+
+<section id="engineering">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Engineering process</div>
+      <h2>The first run said the opposite. That's the part worth reading.</h2>
+      <p class="section-desc">The initial full benchmark showed the AI Data Plane doing worse than raw SQL — the opposite of the thesis. Investigating instead of reporting it surfaced three real bugs.</p>
+    </div>
+    <div class="bug-list">
+      <div class="bug">
+        <div class="n">01</div>
+        <div>
+          <h4>CTE output columns flagged as hallucinated</h4>
+          <p>The SQL parser has no concept of <code>WITH</code> scoping — <code>WITH x AS (SELECT ... AS value) SELECT value FROM x</code> reported <code>value</code> as an unresolvable column, indistinguishable from a genuine hallucination. Fixed by tracking each CTE's own output aliases.</p>
+        </div>
+      </div>
+      <div class="bug">
+        <div class="n">02</div>
+        <div>
+          <h4><code>SELECT *</code> silently bypassed column permissions</h4>
+          <p>A star column comes back from the parser as a literal wildcard marker that matches no real column name — so it was checked against neither the hallucination rule nor the permission rule. A column-restricted role could <code>SELECT *</code> and get everything. A real security gap, not a benchmark artifact.</p>
+        </div>
+      </div>
+      <div class="bug">
+        <div class="n">03</div>
+        <div>
+          <h4>Retrieval was starving the model of schema grounding</h4>
+          <p>Fixing 01 and 02 barely moved the hallucination gap. Root cause: similarity search returned only the top 10 of ~26 semantic-layer entries, and a table's exact column names — which only live in its entity definition — would often get crowded out by better-matching metric entries. Always including the full entity catalog dropped hallucination from 30-57% to 2% in one fix.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Stack</div>
+      <h2>What it's built with</h2>
+    </div>
+    <div class="chips">
+      <span class="chip">Next.js 16</span>
+      <span class="chip">TypeScript</span>
+      <span class="chip">PostgreSQL + pgvector (Supabase)</span>
+      <span class="chip">AI SDK v6</span>
+      <span class="chip">OpenRouter</span>
+      <span class="chip">deepseek-v4-flash</span>
+      <span class="chip">text-embedding-3-small</span>
+      <span class="chip">node-sql-parser</span>
+      <span class="chip">Recharts</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><a href="https://github.com/ShivamBwaj/ai-data-plane" target="_blank" rel="noopener">github.com/ShivamBwaj/ai-data-plane</a></p>
+    <p style="margin-top:6px">Full app source, architecture notes, and benchmark scripts in the repo.</p>
+  </div>
+</footer>
+
+<script>
+  const bars = document.querySelectorAll('.bar-row');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const row = e.target;
+      const fills = row.querySelectorAll('.bar-fill');
+      const raw = parseFloat(row.dataset.raw);
+      const sem = parseFloat(row.dataset.sem);
+      const max = Math.max(raw, sem) * 1.15;
+      fills[0].style.width = (sem / max * 100) + '%';
+      fills[1].style.width = (raw / max * 100) + '%';
+      io.unobserve(row);
+    });
+  }, { threshold: 0.4 });
+  bars.forEach(b => io.observe(b));
+</script>
+
+</body>
+</html>
