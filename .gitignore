@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scratch run logs (benchmark/questions.json and summary.json are kept - real data)
+benchmark/run.log
+
+# session-local (not project config)
+.claude/scheduled_tasks.lock

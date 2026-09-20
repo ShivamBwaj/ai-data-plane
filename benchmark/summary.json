@@ -1,0 +1,23 @@
+{
+  "runId": "run_1789895411962",
+  "raw": {
+    "n": 500,
+    "sql_execution_success_rate": 83,
+    "answer_correctness_rate": 37,
+    "schema_hallucination_rate": 2,
+    "permission_violation_rate": 0.4,
+    "avg_rows_scanned": 1.25,
+    "avg_latency_ms": 7786.44,
+    "avg_total_tokens": 619.49
+  },
+  "semantic": {
+    "n": 500,
+    "sql_execution_success_rate": 85.8,
+    "answer_correctness_rate": 52.2,
+    "schema_hallucination_rate": 2,
+    "permission_violation_rate": 0.6,
+    "avg_rows_scanned": 0.86,
+    "avg_latency_ms": 10559.97,
+    "avg_total_tokens": 1203.38
+  }
+}

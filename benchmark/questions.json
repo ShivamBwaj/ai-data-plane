@@ -1,0 +1,6796 @@
+[
+  {
+    "id": "q1",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-11"
+    },
+    "question": "What was the monthly churn rate in November 2023?",
+    "expectedValue": 0.91,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q2",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-02",
+      "plan_tier": "Starter"
+    },
+    "question": "What was the churn rate for the Starter plan in February 2025?",
+    "expectedValue": 1.44,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q3",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-10",
+      "region": "APAC"
+    },
+    "question": "What was the churn rate in the APAC region in October 2024?",
+    "expectedValue": 0.7,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q4",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2023-08"
+    },
+    "question": "What was total MRR in August 2023?",
+    "expectedValue": 137191,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q5",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2025-07"
+    },
+    "question": "How much new MRR did we add in July 2025?",
+    "expectedValue": 18703,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q6",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2024-05"
+    },
+    "question": "How many active customers did we have in May 2024?",
+    "expectedValue": 1572,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q7",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2023-11"
+    },
+    "question": "What was ARPU in November 2023?",
+    "expectedValue": 182.58,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q8",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2023-05"
+    },
+    "question": "How many new customers signed up in May 2023?",
+    "expectedValue": 111,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q9",
+    "templateId": "ltv_by_segment",
+    "metricName": "customer_ltv",
+    "params": {
+      "segment": "Enterprise"
+    },
+    "question": "What is the average lifetime value of a Enterprise customer?",
+    "expectedValue": 2673.04,
+    "requiredTables": [
+      "customers",
+      "transactions"
+    ]
+  },
+  {
+    "id": "q10",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-04"
+    },
+    "question": "How many support tickets were created in April 2024?",
+    "expectedValue": 54,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q11",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-11",
+      "category": "feature_request"
+    },
+    "question": "How many feature_request support tickets were created in November 2023?",
+    "expectedValue": 7,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q12",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2023-08"
+    },
+    "question": "What was average CSAT in August 2023?",
+    "expectedValue": 2.53,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q13",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2024-06"
+    },
+    "question": "What was the average support ticket resolution time (in days) in June 2024?",
+    "expectedValue": -73.44,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q14",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2024-12"
+    },
+    "question": "What was the refund rate in December 2024?",
+    "expectedValue": 2.64,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q15",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2023-12"
+    },
+    "question": "What share of support tickets created in December 2023 were high or urgent priority?",
+    "expectedValue": 52.78,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q16",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2024-07",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in July 2024?",
+    "expectedValue": 322381,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q17",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-05"
+    },
+    "question": "What was the monthly churn rate in May 2024?",
+    "expectedValue": 0.68,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q18",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-12",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in December 2024?",
+    "expectedValue": 1.07,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q19",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-06",
+      "region": "NA"
+    },
+    "question": "What was the churn rate in the NA region in June 2023?",
+    "expectedValue": 0.72,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q20",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2023-09"
+    },
+    "question": "What was total MRR in September 2023?",
+    "expectedValue": 154184,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q21",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2025-03"
+    },
+    "question": "How much new MRR did we add in March 2025?",
+    "expectedValue": 17500,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q22",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2023-06"
+    },
+    "question": "How many active customers did we have in June 2023?",
+    "expectedValue": 570,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q23",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2023-09"
+    },
+    "question": "What was ARPU in September 2023?",
+    "expectedValue": 182.9,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q24",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2024-05"
+    },
+    "question": "How many new customers signed up in May 2024?",
+    "expectedValue": 97,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q25",
+    "templateId": "ltv_by_segment",
+    "metricName": "customer_ltv",
+    "params": {
+      "segment": "Mid-Market"
+    },
+    "question": "What is the average lifetime value of a Mid-Market customer?",
+    "expectedValue": 3064.31,
+    "requiredTables": [
+      "customers",
+      "transactions"
+    ]
+  },
+  {
+    "id": "q26",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-12"
+    },
+    "question": "How many support tickets were created in December 2024?",
+    "expectedValue": 87,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q27",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-04",
+      "category": "billing"
+    },
+    "question": "How many billing support tickets were created in April 2025?",
+    "expectedValue": 20,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q28",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2024-03"
+    },
+    "question": "What was average CSAT in March 2024?",
+    "expectedValue": 3.24,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q29",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2023-07"
+    },
+    "question": "What was the average support ticket resolution time (in days) in July 2023?",
+    "expectedValue": -397.6,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q30",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2025-02"
+    },
+    "question": "What was the refund rate in February 2025?",
+    "expectedValue": 1.13,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q31",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2024-01"
+    },
+    "question": "What share of support tickets created in January 2024 were high or urgent priority?",
+    "expectedValue": 52.94,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q32",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-06",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in June 2023?",
+    "expectedValue": 99244,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q33",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-07"
+    },
+    "question": "What was the monthly churn rate in July 2023?",
+    "expectedValue": 0.45,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q34",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-03",
+      "plan_tier": "Enterprise"
+    },
+    "question": "What was the churn rate for the Enterprise plan in March 2024?",
+    "expectedValue": 0,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q35",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-08",
+      "region": "EMEA"
+    },
+    "question": "What was the churn rate in the EMEA region in August 2023?",
+    "expectedValue": 0.53,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q36",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2024-09"
+    },
+    "question": "What was total MRR in September 2024?",
+    "expectedValue": 367152,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q37",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2024-11"
+    },
+    "question": "How much new MRR did we add in November 2024?",
+    "expectedValue": 16452,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q38",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2024-03"
+    },
+    "question": "How many active customers did we have in March 2024?",
+    "expectedValue": 1399,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q39",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2024-01"
+    },
+    "question": "What was ARPU in January 2024?",
+    "expectedValue": 185.83,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q40",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2025-02"
+    },
+    "question": "How many new customers signed up in February 2025?",
+    "expectedValue": 87,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q41",
+    "templateId": "ltv_by_segment",
+    "metricName": "customer_ltv",
+    "params": {
+      "segment": "SMB"
+    },
+    "question": "What is the average lifetime value of a SMB customer?",
+    "expectedValue": 3095.32,
+    "requiredTables": [
+      "customers",
+      "transactions"
+    ]
+  },
+  {
+    "id": "q42",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-08"
+    },
+    "question": "How many support tickets were created in August 2023?",
+    "expectedValue": 24,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q43",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-02",
+      "category": "technical"
+    },
+    "question": "How many technical support tickets were created in February 2024?",
+    "expectedValue": 12,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q44",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2024-05"
+    },
+    "question": "What was average CSAT in May 2024?",
+    "expectedValue": 3.06,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q45",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2025-05"
+    },
+    "question": "What was the average support ticket resolution time (in days) in May 2025?",
+    "expectedValue": 79.84,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q46",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2024-01"
+    },
+    "question": "What was the refund rate in January 2024?",
+    "expectedValue": 1.38,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q47",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2023-06"
+    },
+    "question": "What share of support tickets created in June 2023 were high or urgent priority?",
+    "expectedValue": 34.78,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q48",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-08",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in August 2023?",
+    "expectedValue": 2990,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q49",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-12"
+    },
+    "question": "What was the monthly churn rate in December 2024?",
+    "expectedValue": 0.74,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q50",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-05",
+      "plan_tier": "Starter"
+    },
+    "question": "What was the churn rate for the Starter plan in May 2025?",
+    "expectedValue": 1.37,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q51",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-04",
+      "region": "LATAM"
+    },
+    "question": "What was the churn rate in the LATAM region in April 2023?",
+    "expectedValue": 1.12,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q52",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2024-02"
+    },
+    "question": "What was total MRR in February 2024?",
+    "expectedValue": 239477,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q53",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2023-07"
+    },
+    "question": "How much new MRR did we add in July 2023?",
+    "expectedValue": 15389,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q54",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2023-08"
+    },
+    "question": "How many active customers did we have in August 2023?",
+    "expectedValue": 764,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q55",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2025-03"
+    },
+    "question": "What was ARPU in March 2025?",
+    "expectedValue": 191.68,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q56",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2024-10"
+    },
+    "question": "How many new customers signed up in October 2024?",
+    "expectedValue": 95,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q57",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-12"
+    },
+    "question": "How many support tickets were created in December 2023?",
+    "expectedValue": 36,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q58",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-04",
+      "category": "onboarding"
+    },
+    "question": "How many onboarding support tickets were created in April 2024?",
+    "expectedValue": 7,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q59",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2025-07"
+    },
+    "question": "What was average CSAT in July 2025?",
+    "expectedValue": 3.02,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q60",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2024-10"
+    },
+    "question": "What was the average support ticket resolution time (in days) in October 2024?",
+    "expectedValue": -42.64,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q61",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2024-03"
+    },
+    "question": "What was the refund rate in March 2024?",
+    "expectedValue": 1.5,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q62",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2024-04"
+    },
+    "question": "What share of support tickets created in April 2024 were high or urgent priority?",
+    "expectedValue": 61.11,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q63",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-10",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in October 2023?",
+    "expectedValue": 3695,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q64",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-06"
+    },
+    "question": "What was the monthly churn rate in June 2024?",
+    "expectedValue": 0.97,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q65",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-06",
+      "plan_tier": "Starter"
+    },
+    "question": "What was the churn rate for the Starter plan in June 2023?",
+    "expectedValue": 0.65,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q66",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-02",
+      "region": "APAC"
+    },
+    "question": "What was the churn rate in the APAC region in February 2024?",
+    "expectedValue": 0.29,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q67",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2023-03"
+    },
+    "question": "What was total MRR in March 2023?",
+    "expectedValue": 51501,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q68",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2024-10"
+    },
+    "question": "How much new MRR did we add in October 2024?",
+    "expectedValue": 12015,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q69",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2025-05"
+    },
+    "question": "How many active customers did we have in May 2025?",
+    "expectedValue": 2532,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q70",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2024-08"
+    },
+    "question": "What was ARPU in August 2024?",
+    "expectedValue": 192.22,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q71",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2024-01"
+    },
+    "question": "How many new customers signed up in January 2024?",
+    "expectedValue": 112,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q72",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-11"
+    },
+    "question": "How many support tickets were created in November 2024?",
+    "expectedValue": 83,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q73",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-09",
+      "category": "onboarding"
+    },
+    "question": "How many onboarding support tickets were created in September 2023?",
+    "expectedValue": 5,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q74",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2025-02"
+    },
+    "question": "What was average CSAT in February 2025?",
+    "expectedValue": 3.15,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q75",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2024-12"
+    },
+    "question": "What was the average support ticket resolution time (in days) in December 2024?",
+    "expectedValue": 44.45,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q76",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2023-07"
+    },
+    "question": "What was the refund rate in July 2023?",
+    "expectedValue": 1.97,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q77",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2024-10"
+    },
+    "question": "What share of support tickets created in October 2024 were high or urgent priority?",
+    "expectedValue": 55.56,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q78",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-04",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in April 2023?",
+    "expectedValue": 1070,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q79",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-04"
+    },
+    "question": "What was the monthly churn rate in April 2024?",
+    "expectedValue": 0.72,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q80",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-07",
+      "plan_tier": "Scale"
+    },
+    "question": "What was the churn rate for the Scale plan in July 2023?",
+    "expectedValue": 0.65,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q81",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-07",
+      "region": "APAC"
+    },
+    "question": "What was the churn rate in the APAC region in July 2024?",
+    "expectedValue": 0.42,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q82",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2024-05"
+    },
+    "question": "What was total MRR in May 2024?",
+    "expectedValue": 294278,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q83",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2023-05"
+    },
+    "question": "How much new MRR did we add in May 2023?",
+    "expectedValue": 18379,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q84",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2025-03"
+    },
+    "question": "How many active customers did we have in March 2025?",
+    "expectedValue": 2378,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q85",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2025-07"
+    },
+    "question": "What was ARPU in July 2025?",
+    "expectedValue": 194.09,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q86",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2023-07"
+    },
+    "question": "How many new customers signed up in July 2023?",
+    "expectedValue": 91,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q87",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-01"
+    },
+    "question": "How many support tickets were created in January 2024?",
+    "expectedValue": 34,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q88",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-05",
+      "category": "onboarding"
+    },
+    "question": "How many onboarding support tickets were created in May 2023?",
+    "expectedValue": 3,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q89",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2023-09"
+    },
+    "question": "What was average CSAT in September 2023?",
+    "expectedValue": 2.74,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q90",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2024-02"
+    },
+    "question": "What was the average support ticket resolution time (in days) in February 2024?",
+    "expectedValue": -276.63,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q91",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2025-01"
+    },
+    "question": "What was the refund rate in January 2025?",
+    "expectedValue": 2.18,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q92",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2023-11"
+    },
+    "question": "What share of support tickets created in November 2023 were high or urgent priority?",
+    "expectedValue": 43.33,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q93",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-02",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in February 2023?",
+    "expectedValue": 33195,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q94",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-02"
+    },
+    "question": "What was the monthly churn rate in February 2023?",
+    "expectedValue": 1.98,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q95",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-04",
+      "plan_tier": "Starter"
+    },
+    "question": "What was the churn rate for the Starter plan in April 2023?",
+    "expectedValue": 0,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q96",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-03",
+      "region": "EMEA"
+    },
+    "question": "What was the churn rate in the EMEA region in March 2025?",
+    "expectedValue": 0.29,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q97",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2024-12"
+    },
+    "question": "What was total MRR in December 2024?",
+    "expectedValue": 413971,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q98",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2024-03"
+    },
+    "question": "How much new MRR did we add in March 2024?",
+    "expectedValue": 18935,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q99",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2023-12"
+    },
+    "question": "How many active customers did we have in December 2023?",
+    "expectedValue": 1104,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q100",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2023-08"
+    },
+    "question": "What was ARPU in August 2023?",
+    "expectedValue": 179.57,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q101",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2024-11"
+    },
+    "question": "How many new customers signed up in November 2024?",
+    "expectedValue": 88,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q102",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-02"
+    },
+    "question": "How many support tickets were created in February 2023?",
+    "expectedValue": 3,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q103",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-03",
+      "category": "onboarding"
+    },
+    "question": "How many onboarding support tickets were created in March 2024?",
+    "expectedValue": 8,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q104",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2023-11"
+    },
+    "question": "What was average CSAT in November 2023?",
+    "expectedValue": 3.09,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q105",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2023-06"
+    },
+    "question": "What was the average support ticket resolution time (in days) in June 2023?",
+    "expectedValue": -395.57,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q106",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2023-06"
+    },
+    "question": "What was the refund rate in June 2023?",
+    "expectedValue": 2.05,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q107",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2023-02"
+    },
+    "question": "What share of support tickets created in February 2023 were high or urgent priority?",
+    "expectedValue": 100,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q108",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2024-07",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in July 2024?",
+    "expectedValue": 7135,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q109",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-06"
+    },
+    "question": "What was the monthly churn rate in June 2025?",
+    "expectedValue": 0.4,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q110",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-04",
+      "plan_tier": "Starter"
+    },
+    "question": "What was the churn rate for the Starter plan in April 2024?",
+    "expectedValue": 1.64,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q111",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-06",
+      "region": "APAC"
+    },
+    "question": "What was the churn rate in the APAC region in June 2025?",
+    "expectedValue": 0.53,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q112",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2024-04"
+    },
+    "question": "What was total MRR in April 2024?",
+    "expectedValue": 274822,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q113",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2024-05"
+    },
+    "question": "How much new MRR did we add in May 2024?",
+    "expectedValue": 20273,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q114",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2025-04"
+    },
+    "question": "How many active customers did we have in April 2025?",
+    "expectedValue": 2439,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q115",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2024-05"
+    },
+    "question": "What was ARPU in May 2024?",
+    "expectedValue": 187.2,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q116",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2023-03"
+    },
+    "question": "How many new customers signed up in March 2023?",
+    "expectedValue": 108,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q117",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-08"
+    },
+    "question": "How many support tickets were created in August 2024?",
+    "expectedValue": 73,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q118",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-02",
+      "category": "billing"
+    },
+    "question": "How many billing support tickets were created in February 2024?",
+    "expectedValue": 6,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q119",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2024-11"
+    },
+    "question": "What was average CSAT in November 2024?",
+    "expectedValue": 3.33,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q120",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2023-09"
+    },
+    "question": "What was the average support ticket resolution time (in days) in September 2023?",
+    "expectedValue": -274.37,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q121",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2024-05"
+    },
+    "question": "What was the refund rate in May 2024?",
+    "expectedValue": 2.36,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q122",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2024-07"
+    },
+    "question": "What share of support tickets created in July 2024 were high or urgent priority?",
+    "expectedValue": 64.52,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q123",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-05",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in May 2023?",
+    "expectedValue": 1380,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q124",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-03"
+    },
+    "question": "What was the monthly churn rate in March 2023?",
+    "expectedValue": 1.05,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q125",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-05",
+      "plan_tier": "Starter"
+    },
+    "question": "What was the churn rate for the Starter plan in May 2023?",
+    "expectedValue": 1.71,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q126",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-07",
+      "region": "NA"
+    },
+    "question": "What was the churn rate in the NA region in July 2023?",
+    "expectedValue": 0,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q127",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2025-01"
+    },
+    "question": "What was total MRR in January 2025?",
+    "expectedValue": 424640,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q128",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2023-12"
+    },
+    "question": "How much new MRR did we add in December 2023?",
+    "expectedValue": 19142,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q129",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2024-02"
+    },
+    "question": "How many active customers did we have in February 2024?",
+    "expectedValue": 1293,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q130",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2023-10"
+    },
+    "question": "What was ARPU in October 2023?",
+    "expectedValue": 183.54,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q131",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2023-02"
+    },
+    "question": "How many new customers signed up in February 2023?",
+    "expectedValue": 83,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q132",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-02"
+    },
+    "question": "How many support tickets were created in February 2025?",
+    "expectedValue": 105,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q133",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-10",
+      "category": "onboarding"
+    },
+    "question": "How many onboarding support tickets were created in October 2024?",
+    "expectedValue": 21,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q134",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2023-12"
+    },
+    "question": "What was average CSAT in December 2023?",
+    "expectedValue": 2.59,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q135",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2023-11"
+    },
+    "question": "What was the average support ticket resolution time (in days) in November 2023?",
+    "expectedValue": -113.07,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q136",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2024-11"
+    },
+    "question": "What was the refund rate in November 2024?",
+    "expectedValue": 1.95,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q137",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2024-12"
+    },
+    "question": "What share of support tickets created in December 2024 were high or urgent priority?",
+    "expectedValue": 51.72,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q138",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-05",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in May 2023?",
+    "expectedValue": 80950,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q139",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-03"
+    },
+    "question": "What was the monthly churn rate in March 2025?",
+    "expectedValue": 0.56,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q140",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-07",
+      "plan_tier": "Starter"
+    },
+    "question": "What was the churn rate for the Starter plan in July 2025?",
+    "expectedValue": 1.58,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q141",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-11",
+      "region": "NA"
+    },
+    "question": "What was the churn rate in the NA region in November 2023?",
+    "expectedValue": 1.05,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q142",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2023-05"
+    },
+    "question": "What was total MRR in May 2023?",
+    "expectedValue": 82113,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q143",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2023-08"
+    },
+    "question": "How much new MRR did we add in August 2023?",
+    "expectedValue": 21114,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q144",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2023-05"
+    },
+    "question": "How many active customers did we have in May 2023?",
+    "expectedValue": 470,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q145",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2023-12"
+    },
+    "question": "What was ARPU in December 2023?",
+    "expectedValue": 183.37,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q146",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2024-07"
+    },
+    "question": "How many new customers signed up in July 2024?",
+    "expectedValue": 98,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q147",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-09"
+    },
+    "question": "How many support tickets were created in September 2024?",
+    "expectedValue": 71,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q148",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-06",
+      "category": "technical"
+    },
+    "question": "How many technical support tickets were created in June 2023?",
+    "expectedValue": 4,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q149",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2024-10"
+    },
+    "question": "What was average CSAT in October 2024?",
+    "expectedValue": 2.79,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q150",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2023-08"
+    },
+    "question": "What was the average support ticket resolution time (in days) in August 2023?",
+    "expectedValue": -350.56,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q151",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2024-08"
+    },
+    "question": "What was the refund rate in August 2024?",
+    "expectedValue": 1.53,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q152",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2024-08"
+    },
+    "question": "What share of support tickets created in August 2024 were high or urgent priority?",
+    "expectedValue": 47.95,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q153",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2025-04",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in April 2025?",
+    "expectedValue": 10345,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q154",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-07"
+    },
+    "question": "What was the monthly churn rate in July 2024?",
+    "expectedValue": 0.72,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q155",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-03",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in March 2024?",
+    "expectedValue": 0.28,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q156",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-04",
+      "region": "LATAM"
+    },
+    "question": "What was the churn rate in the LATAM region in April 2024?",
+    "expectedValue": 1.01,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q157",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2023-02"
+    },
+    "question": "What was total MRR in February 2023?",
+    "expectedValue": 33537,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q158",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2024-06"
+    },
+    "question": "How much new MRR did we add in June 2024?",
+    "expectedValue": 16768,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q159",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2023-11"
+    },
+    "question": "How many active customers did we have in November 2023?",
+    "expectedValue": 1012,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q160",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2023-07"
+    },
+    "question": "What was ARPU in July 2023?",
+    "expectedValue": 176.8,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q161",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2025-04"
+    },
+    "question": "How many new customers signed up in April 2025?",
+    "expectedValue": 85,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q162",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-05"
+    },
+    "question": "How many support tickets were created in May 2025?",
+    "expectedValue": 149,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q163",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-04",
+      "category": "billing"
+    },
+    "question": "How many billing support tickets were created in April 2023?",
+    "expectedValue": 0,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q164",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2024-06"
+    },
+    "question": "What was average CSAT in June 2024?",
+    "expectedValue": 3.2,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q165",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2024-05"
+    },
+    "question": "What was the average support ticket resolution time (in days) in May 2024?",
+    "expectedValue": -113.39,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q166",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2023-05"
+    },
+    "question": "What was the refund rate in May 2023?",
+    "expectedValue": 2.34,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q167",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2023-04"
+    },
+    "question": "What share of support tickets created in April 2023 were high or urgent priority?",
+    "expectedValue": 25,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q168",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-12",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in December 2023?",
+    "expectedValue": 198307,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q169",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-01"
+    },
+    "question": "What was the monthly churn rate in January 2024?",
+    "expectedValue": 0.61,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q170",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-01",
+      "plan_tier": "Starter"
+    },
+    "question": "What was the churn rate for the Starter plan in January 2024?",
+    "expectedValue": 0.85,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q171",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-02",
+      "region": "EMEA"
+    },
+    "question": "What was the churn rate in the EMEA region in February 2025?",
+    "expectedValue": 0.6,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q172",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2024-10"
+    },
+    "question": "What was total MRR in October 2024?",
+    "expectedValue": 378391,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q173",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2024-04"
+    },
+    "question": "How much new MRR did we add in April 2024?",
+    "expectedValue": 17718,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q174",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2025-01"
+    },
+    "question": "How many active customers did we have in January 2025?",
+    "expectedValue": 2223,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q175",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2023-06"
+    },
+    "question": "What was ARPU in June 2023?",
+    "expectedValue": 177.47,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q176",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2023-08"
+    },
+    "question": "How many new customers signed up in August 2023?",
+    "expectedValue": 111,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q177",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-03"
+    },
+    "question": "How many support tickets were created in March 2025?",
+    "expectedValue": 113,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q178",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-07",
+      "category": "billing"
+    },
+    "question": "How many billing support tickets were created in July 2025?",
+    "expectedValue": 42,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q179",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2025-05"
+    },
+    "question": "What was average CSAT in May 2025?",
+    "expectedValue": 2.97,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q180",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2024-09"
+    },
+    "question": "What was the average support ticket resolution time (in days) in September 2024?",
+    "expectedValue": -41.07,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q181",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2024-07"
+    },
+    "question": "What was the refund rate in July 2024?",
+    "expectedValue": 1.23,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q182",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2025-01"
+    },
+    "question": "What share of support tickets created in January 2025 were high or urgent priority?",
+    "expectedValue": 42.86,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q183",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-06",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in June 2023?",
+    "expectedValue": 1965,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q184",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-09"
+    },
+    "question": "What was the monthly churn rate in September 2023?",
+    "expectedValue": 0.77,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q185",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-10",
+      "plan_tier": "Scale"
+    },
+    "question": "What was the churn rate for the Scale plan in October 2024?",
+    "expectedValue": 0.53,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q186",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-08",
+      "region": "LATAM"
+    },
+    "question": "What was the churn rate in the LATAM region in August 2023?",
+    "expectedValue": 0.47,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q187",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2024-08"
+    },
+    "question": "What was total MRR in August 2024?",
+    "expectedValue": 351571,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q188",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2025-04"
+    },
+    "question": "How much new MRR did we add in April 2025?",
+    "expectedValue": 15435,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q189",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2024-12"
+    },
+    "question": "How many active customers did we have in December 2024?",
+    "expectedValue": 2156,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q190",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2024-09"
+    },
+    "question": "What was ARPU in September 2024?",
+    "expectedValue": 192.43,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q191",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2023-10"
+    },
+    "question": "How many new customers signed up in October 2023?",
+    "expectedValue": 93,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q192",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-09"
+    },
+    "question": "How many support tickets were created in September 2023?",
+    "expectedValue": 28,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q193",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-04",
+      "category": "feature_request"
+    },
+    "question": "How many feature_request support tickets were created in April 2024?",
+    "expectedValue": 13,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q194",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2025-06"
+    },
+    "question": "What was average CSAT in June 2025?",
+    "expectedValue": 3.11,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q195",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2023-02"
+    },
+    "question": "What was the average support ticket resolution time (in days) in February 2023?",
+    "expectedValue": -530.25,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q196",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2024-06"
+    },
+    "question": "What was the refund rate in June 2024?",
+    "expectedValue": 1.81,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q197",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2023-08"
+    },
+    "question": "What share of support tickets created in August 2023 were high or urgent priority?",
+    "expectedValue": 54.17,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q198",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2024-05",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in May 2024?",
+    "expectedValue": 288145,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q199",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-02"
+    },
+    "question": "What was the monthly churn rate in February 2024?",
+    "expectedValue": 0.7,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q200",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-04",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in April 2025?",
+    "expectedValue": 1.35,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q201",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-10",
+      "region": "NA"
+    },
+    "question": "What was the churn rate in the NA region in October 2023?",
+    "expectedValue": 1.92,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q202",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2023-11"
+    },
+    "question": "What was total MRR in November 2023?",
+    "expectedValue": 184772,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q203",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2023-11"
+    },
+    "question": "How much new MRR did we add in November 2023?",
+    "expectedValue": 14906,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q204",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2024-10"
+    },
+    "question": "How many active customers did we have in October 2024?",
+    "expectedValue": 1993,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q205",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2024-11"
+    },
+    "question": "What was ARPU in November 2024?",
+    "expectedValue": 190.56,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q206",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2023-11"
+    },
+    "question": "How many new customers signed up in November 2023?",
+    "expectedValue": 89,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q207",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-06"
+    },
+    "question": "How many support tickets were created in June 2025?",
+    "expectedValue": 138,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q208",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-01",
+      "category": "bug"
+    },
+    "question": "How many bug support tickets were created in January 2024?",
+    "expectedValue": 9,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q209",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2025-03"
+    },
+    "question": "What was average CSAT in March 2025?",
+    "expectedValue": 2.8,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q210",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2025-07"
+    },
+    "question": "What was the average support ticket resolution time (in days) in July 2025?",
+    "expectedValue": 128.24,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q211",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2023-12"
+    },
+    "question": "What was the refund rate in December 2023?",
+    "expectedValue": 1.61,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q212",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2023-09"
+    },
+    "question": "What share of support tickets created in September 2023 were high or urgent priority?",
+    "expectedValue": 50,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q213",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-04",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in April 2023?",
+    "expectedValue": 63098,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q214",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-08"
+    },
+    "question": "What was the monthly churn rate in August 2023?",
+    "expectedValue": 0.64,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q215",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-07",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in July 2023?",
+    "expectedValue": 0.61,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q216",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-11",
+      "region": "EMEA"
+    },
+    "question": "What was the churn rate in the EMEA region in November 2023?",
+    "expectedValue": 2.51,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q217",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2025-04"
+    },
+    "question": "What was total MRR in April 2025?",
+    "expectedValue": 469501,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q218",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2023-06"
+    },
+    "question": "How much new MRR did we add in June 2023?",
+    "expectedValue": 19411,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q219",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2024-06"
+    },
+    "question": "How many active customers did we have in June 2024?",
+    "expectedValue": 1653,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q220",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2025-02"
+    },
+    "question": "What was ARPU in February 2025?",
+    "expectedValue": 191.49,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q221",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2024-02"
+    },
+    "question": "How many new customers signed up in February 2024?",
+    "expectedValue": 92,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q222",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-01"
+    },
+    "question": "How many support tickets were created in January 2025?",
+    "expectedValue": 91,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q223",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-09",
+      "category": "onboarding"
+    },
+    "question": "How many onboarding support tickets were created in September 2024?",
+    "expectedValue": 21,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q224",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2024-01"
+    },
+    "question": "What was average CSAT in January 2024?",
+    "expectedValue": 3,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q225",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2023-03"
+    },
+    "question": "What was the average support ticket resolution time (in days) in March 2023?",
+    "expectedValue": -559.67,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q226",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2025-05"
+    },
+    "question": "What was the refund rate in May 2025?",
+    "expectedValue": 2.21,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q227",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2023-07"
+    },
+    "question": "What share of support tickets created in July 2023 were high or urgent priority?",
+    "expectedValue": 36.84,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q228",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2024-04",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in April 2024?",
+    "expectedValue": 269233,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q229",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-04"
+    },
+    "question": "What was the monthly churn rate in April 2023?",
+    "expectedValue": 0.32,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q230",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-10",
+      "plan_tier": "Starter"
+    },
+    "question": "What was the churn rate for the Starter plan in October 2023?",
+    "expectedValue": 1.45,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q231",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-05",
+      "region": "LATAM"
+    },
+    "question": "What was the churn rate in the LATAM region in May 2025?",
+    "expectedValue": 0.91,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q232",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2024-07"
+    },
+    "question": "What was total MRR in July 2024?",
+    "expectedValue": 329242,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q233",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2024-08"
+    },
+    "question": "How much new MRR did we add in August 2024?",
+    "expectedValue": 24375,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q234",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2024-07"
+    },
+    "question": "How many active customers did we have in July 2024?",
+    "expectedValue": 1738,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q235",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2024-07"
+    },
+    "question": "What was ARPU in July 2024?",
+    "expectedValue": 189.44,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q236",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2024-12"
+    },
+    "question": "How many new customers signed up in December 2024?",
+    "expectedValue": 111,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q237",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-05"
+    },
+    "question": "How many support tickets were created in May 2023?",
+    "expectedValue": 5,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q238",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-03",
+      "category": "bug"
+    },
+    "question": "How many bug support tickets were created in March 2023?",
+    "expectedValue": 1,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q239",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2023-04"
+    },
+    "question": "What was average CSAT in April 2023?",
+    "expectedValue": 2.33,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q240",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2023-04"
+    },
+    "question": "What was the average support ticket resolution time (in days) in April 2023?",
+    "expectedValue": -586.33,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q241",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2023-08"
+    },
+    "question": "What was the refund rate in August 2023?",
+    "expectedValue": 1.1,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q242",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2024-06"
+    },
+    "question": "What share of support tickets created in June 2024 were high or urgent priority?",
+    "expectedValue": 52.17,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q243",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-10",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in October 2023?",
+    "expectedValue": 167267,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q244",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-06"
+    },
+    "question": "What was the monthly churn rate in June 2023?",
+    "expectedValue": 1.12,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q245",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-03",
+      "plan_tier": "Enterprise"
+    },
+    "question": "What was the churn rate for the Enterprise plan in March 2023?",
+    "expectedValue": 0,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q246",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-12",
+      "region": "LATAM"
+    },
+    "question": "What was the churn rate in the LATAM region in December 2023?",
+    "expectedValue": 1.99,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q247",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2024-11"
+    },
+    "question": "What was total MRR in November 2024?",
+    "expectedValue": 393126,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q248",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2024-09"
+    },
+    "question": "How much new MRR did we add in September 2024?",
+    "expectedValue": 16593,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q249",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2023-04"
+    },
+    "question": "How many active customers did we have in April 2023?",
+    "expectedValue": 362,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q250",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2024-12"
+    },
+    "question": "What was ARPU in December 2024?",
+    "expectedValue": 192.01,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q251",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2023-09"
+    },
+    "question": "How many new customers signed up in September 2023?",
+    "expectedValue": 84,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q252",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-02"
+    },
+    "question": "How many support tickets were created in February 2024?",
+    "expectedValue": 47,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q253",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-07",
+      "category": "technical"
+    },
+    "question": "How many technical support tickets were created in July 2025?",
+    "expectedValue": 34,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q254",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2024-04"
+    },
+    "question": "What was average CSAT in April 2024?",
+    "expectedValue": 3.2,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q255",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2024-08"
+    },
+    "question": "What was the average support ticket resolution time (in days) in August 2024?",
+    "expectedValue": -70.12,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q256",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2024-04"
+    },
+    "question": "What was the refund rate in April 2024?",
+    "expectedValue": 1.52,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q257",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2025-04"
+    },
+    "question": "What share of support tickets created in April 2025 were high or urgent priority?",
+    "expectedValue": 44.35,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q258",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2025-06",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in June 2025?",
+    "expectedValue": 491785,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q259",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-04"
+    },
+    "question": "What was the monthly churn rate in April 2025?",
+    "expectedValue": 0.71,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q260",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-04",
+      "plan_tier": "Enterprise"
+    },
+    "question": "What was the churn rate for the Enterprise plan in April 2024?",
+    "expectedValue": 0.24,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q261",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-03",
+      "region": "LATAM"
+    },
+    "question": "What was the churn rate in the LATAM region in March 2024?",
+    "expectedValue": 0.27,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q262",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2025-02"
+    },
+    "question": "What was total MRR in February 2025?",
+    "expectedValue": 439855,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q263",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2023-04"
+    },
+    "question": "How much new MRR did we add in April 2023?",
+    "expectedValue": 12816,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q264",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2024-01"
+    },
+    "question": "How many active customers did we have in January 2024?",
+    "expectedValue": 1209,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q265",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2024-03"
+    },
+    "question": "What was ARPU in March 2024?",
+    "expectedValue": 184.49,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q266",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2025-03"
+    },
+    "question": "How many new customers signed up in March 2025?",
+    "expectedValue": 100,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q267",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-03"
+    },
+    "question": "How many support tickets were created in March 2023?",
+    "expectedValue": 9,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q268",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-02",
+      "category": "technical"
+    },
+    "question": "How many technical support tickets were created in February 2025?",
+    "expectedValue": 25,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q269",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2024-12"
+    },
+    "question": "What was average CSAT in December 2024?",
+    "expectedValue": 2.99,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q270",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2023-10"
+    },
+    "question": "What was the average support ticket resolution time (in days) in October 2023?",
+    "expectedValue": -327.44,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q271",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2024-10"
+    },
+    "question": "What was the refund rate in October 2024?",
+    "expectedValue": 2.25,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q272",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2025-06"
+    },
+    "question": "What share of support tickets created in June 2025 were high or urgent priority?",
+    "expectedValue": 47.1,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q273",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2024-06",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in June 2024?",
+    "expectedValue": 303481,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q274",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-07"
+    },
+    "question": "What was the monthly churn rate in July 2025?",
+    "expectedValue": 0.49,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q275",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-07",
+      "plan_tier": "Scale"
+    },
+    "question": "What was the churn rate for the Scale plan in July 2025?",
+    "expectedValue": 0.25,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q276",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-03",
+      "region": "LATAM"
+    },
+    "question": "What was the churn rate in the LATAM region in March 2023?",
+    "expectedValue": 3.33,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q277",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2024-03"
+    },
+    "question": "What was total MRR in March 2024?",
+    "expectedValue": 258100,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q278",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2025-06"
+    },
+    "question": "How much new MRR did we add in June 2025?",
+    "expectedValue": 14787,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q279",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2024-11"
+    },
+    "question": "How many active customers did we have in November 2024?",
+    "expectedValue": 2063,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q280",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2023-03"
+    },
+    "question": "What was ARPU in March 2023?",
+    "expectedValue": 184.59,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q281",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2025-05"
+    },
+    "question": "How many new customers signed up in May 2025?",
+    "expectedValue": 113,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q282",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-10"
+    },
+    "question": "How many support tickets were created in October 2023?",
+    "expectedValue": 33,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q283",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-04",
+      "category": "technical"
+    },
+    "question": "How many technical support tickets were created in April 2025?",
+    "expectedValue": 36,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q284",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2024-02"
+    },
+    "question": "What was average CSAT in February 2024?",
+    "expectedValue": 3.19,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q285",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2024-01"
+    },
+    "question": "What was the average support ticket resolution time (in days) in January 2024?",
+    "expectedValue": -204.47,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q286",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2023-04"
+    },
+    "question": "What was the refund rate in April 2023?",
+    "expectedValue": 1.63,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q287",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2025-03"
+    },
+    "question": "What share of support tickets created in March 2025 were high or urgent priority?",
+    "expectedValue": 50.44,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q288",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2025-03",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in March 2025?",
+    "expectedValue": 446972,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q289",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-10"
+    },
+    "question": "What was the monthly churn rate in October 2023?",
+    "expectedValue": 0.89,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q290",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-11",
+      "plan_tier": "Enterprise"
+    },
+    "question": "What was the churn rate for the Enterprise plan in November 2023?",
+    "expectedValue": 0.37,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q291",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-01",
+      "region": "APAC"
+    },
+    "question": "What was the churn rate in the APAC region in January 2025?",
+    "expectedValue": 0.45,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q292",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2023-07"
+    },
+    "question": "What was total MRR in July 2023?",
+    "expectedValue": 116332,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q293",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2025-01"
+    },
+    "question": "How much new MRR did we add in January 2025?",
+    "expectedValue": 12939,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q294",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2023-03"
+    },
+    "question": "How many active customers did we have in March 2023?",
+    "expectedValue": 279,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q295",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2024-04"
+    },
+    "question": "What was ARPU in April 2024?",
+    "expectedValue": 185.07,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q296",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2023-06"
+    },
+    "question": "How many new customers signed up in June 2023?",
+    "expectedValue": 104,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q297",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-10"
+    },
+    "question": "How many support tickets were created in October 2024?",
+    "expectedValue": 90,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q298",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-07",
+      "category": "technical"
+    },
+    "question": "How many technical support tickets were created in July 2023?",
+    "expectedValue": 5,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q299",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2025-04"
+    },
+    "question": "What was average CSAT in April 2025?",
+    "expectedValue": 2.76,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q300",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2025-06"
+    },
+    "question": "What was the average support ticket resolution time (in days) in June 2025?",
+    "expectedValue": 145.24,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q301",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2025-06"
+    },
+    "question": "What was the refund rate in June 2025?",
+    "expectedValue": 1.4,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q302",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2023-05"
+    },
+    "question": "What share of support tickets created in May 2023 were high or urgent priority?",
+    "expectedValue": 40,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q303",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2025-02",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in February 2025?",
+    "expectedValue": 430793,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q304",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-08"
+    },
+    "question": "What was the monthly churn rate in August 2024?",
+    "expectedValue": 0.97,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q305",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-04",
+      "plan_tier": "Starter"
+    },
+    "question": "What was the churn rate for the Starter plan in April 2025?",
+    "expectedValue": 1.08,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q306",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-02",
+      "region": "EMEA"
+    },
+    "question": "What was the churn rate in the EMEA region in February 2024?",
+    "expectedValue": 0,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q307",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2023-06"
+    },
+    "question": "What was total MRR in June 2023?",
+    "expectedValue": 101160,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q308",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2024-12"
+    },
+    "question": "How much new MRR did we add in December 2024?",
+    "expectedValue": 22234,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q309",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2023-02"
+    },
+    "question": "How many active customers did we have in February 2023?",
+    "expectedValue": 173,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q310",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2025-05"
+    },
+    "question": "What was ARPU in May 2025?",
+    "expectedValue": 193.2,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q311",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2024-03"
+    },
+    "question": "How many new customers signed up in March 2024?",
+    "expectedValue": 110,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q312",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-11"
+    },
+    "question": "How many support tickets were created in November 2023?",
+    "expectedValue": 30,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q313",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-02",
+      "category": "feature_request"
+    },
+    "question": "How many feature_request support tickets were created in February 2023?",
+    "expectedValue": 1,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q314",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2023-07"
+    },
+    "question": "What was average CSAT in July 2023?",
+    "expectedValue": 3.2,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q315",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2023-05"
+    },
+    "question": "What was the average support ticket resolution time (in days) in May 2023?",
+    "expectedValue": -307.5,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q316",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2023-03"
+    },
+    "question": "What was the refund rate in March 2023?",
+    "expectedValue": 1.85,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q317",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2024-05"
+    },
+    "question": "What share of support tickets created in May 2024 were high or urgent priority?",
+    "expectedValue": 49.12,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q318",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2024-12",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in December 2024?",
+    "expectedValue": 405923,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q319",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-11"
+    },
+    "question": "What was the monthly churn rate in November 2024?",
+    "expectedValue": 0.68,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q320",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-04",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in April 2023?",
+    "expectedValue": 0,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q321",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-04",
+      "region": "EMEA"
+    },
+    "question": "What was the churn rate in the EMEA region in April 2024?",
+    "expectedValue": 0.47,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q322",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2024-06"
+    },
+    "question": "What was total MRR in June 2024?",
+    "expectedValue": 309565,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q323",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2025-02"
+    },
+    "question": "How much new MRR did we add in February 2025?",
+    "expectedValue": 16338,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q324",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2025-07"
+    },
+    "question": "How many active customers did we have in July 2025?",
+    "expectedValue": 2674,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q325",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2024-02"
+    },
+    "question": "What was ARPU in February 2024?",
+    "expectedValue": 185.21,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q326",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2024-09"
+    },
+    "question": "How many new customers signed up in September 2024?",
+    "expectedValue": 92,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q327",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-03"
+    },
+    "question": "How many support tickets were created in March 2024?",
+    "expectedValue": 57,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q328",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-06",
+      "category": "feature_request"
+    },
+    "question": "How many feature_request support tickets were created in June 2025?",
+    "expectedValue": 26,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q329",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2025-01"
+    },
+    "question": "What was average CSAT in January 2025?",
+    "expectedValue": 3.26,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q330",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2025-04"
+    },
+    "question": "What was the average support ticket resolution time (in days) in April 2025?",
+    "expectedValue": 109.64,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q331",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2023-09"
+    },
+    "question": "What was the refund rate in September 2023?",
+    "expectedValue": 1.7,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q332",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2024-02"
+    },
+    "question": "What share of support tickets created in February 2024 were high or urgent priority?",
+    "expectedValue": 55.32,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q333",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2025-03",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in March 2025?",
+    "expectedValue": 9935,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q334",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-03"
+    },
+    "question": "What was the monthly churn rate in March 2024?",
+    "expectedValue": 0.52,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q335",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-08",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in August 2024?",
+    "expectedValue": 1.3,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q336",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-03",
+      "region": "APAC"
+    },
+    "question": "What was the churn rate in the APAC region in March 2024?",
+    "expectedValue": 0.53,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q337",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2024-01"
+    },
+    "question": "What was total MRR in January 2024?",
+    "expectedValue": 224664,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q338",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2025-05"
+    },
+    "question": "How much new MRR did we add in May 2025?",
+    "expectedValue": 21602,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q339",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2023-07"
+    },
+    "question": "How many active customers did we have in July 2023?",
+    "expectedValue": 658,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q340",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2025-04"
+    },
+    "question": "What was ARPU in April 2025?",
+    "expectedValue": 192.5,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q341",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2025-07"
+    },
+    "question": "How many new customers signed up in July 2025?",
+    "expectedValue": 97,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q342",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-06"
+    },
+    "question": "How many support tickets were created in June 2023?",
+    "expectedValue": 23,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q343",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-12",
+      "category": "onboarding"
+    },
+    "question": "How many onboarding support tickets were created in December 2024?",
+    "expectedValue": 18,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q344",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2023-05"
+    },
+    "question": "What was average CSAT in May 2023?",
+    "expectedValue": 2.17,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q345",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2025-03"
+    },
+    "question": "What was the average support ticket resolution time (in days) in March 2025?",
+    "expectedValue": 128.56,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q346",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2024-09"
+    },
+    "question": "What was the refund rate in September 2024?",
+    "expectedValue": 2.14,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q347",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2023-03"
+    },
+    "question": "What share of support tickets created in March 2023 were high or urgent priority?",
+    "expectedValue": 55.56,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q348",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-07",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in July 2023?",
+    "expectedValue": 113826,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q349",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-05"
+    },
+    "question": "What was the monthly churn rate in May 2025?",
+    "expectedValue": 0.63,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q350",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-02",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in February 2024?",
+    "expectedValue": 0.91,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q351",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-06",
+      "region": "APAC"
+    },
+    "question": "What was the churn rate in the APAC region in June 2024?",
+    "expectedValue": 0.66,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q352",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2023-10"
+    },
+    "question": "What was total MRR in October 2023?",
+    "expectedValue": 170875,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q353",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2024-02"
+    },
+    "question": "How much new MRR did we add in February 2024?",
+    "expectedValue": 15833,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q354",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2024-04"
+    },
+    "question": "How many active customers did we have in April 2024?",
+    "expectedValue": 1485,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q355",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2024-06"
+    },
+    "question": "What was ARPU in June 2024?",
+    "expectedValue": 187.27,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q356",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2025-01"
+    },
+    "question": "How many new customers signed up in January 2025?",
+    "expectedValue": 81,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q357",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-04"
+    },
+    "question": "How many support tickets were created in April 2025?",
+    "expectedValue": 124,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q358",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-07",
+      "category": "bug"
+    },
+    "question": "How many bug support tickets were created in July 2025?",
+    "expectedValue": 32,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q359",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2024-07"
+    },
+    "question": "What was average CSAT in July 2024?",
+    "expectedValue": 3.12,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q360",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2025-01"
+    },
+    "question": "What was the average support ticket resolution time (in days) in January 2025?",
+    "expectedValue": 44.23,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q361",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2023-11"
+    },
+    "question": "What was the refund rate in November 2023?",
+    "expectedValue": 2.05,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q362",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2025-07"
+    },
+    "question": "What share of support tickets created in July 2025 were high or urgent priority?",
+    "expectedValue": 60.11,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q363",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2024-01",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in January 2024?",
+    "expectedValue": 219788,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q364",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-01"
+    },
+    "question": "What was the monthly churn rate in January 2025?",
+    "expectedValue": 0.51,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q365",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-09",
+      "plan_tier": "Enterprise"
+    },
+    "question": "What was the churn rate for the Enterprise plan in September 2024?",
+    "expectedValue": 0,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q366",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-07",
+      "region": "LATAM"
+    },
+    "question": "What was the churn rate in the LATAM region in July 2025?",
+    "expectedValue": 0.29,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q367",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2025-03"
+    },
+    "question": "What was total MRR in March 2025?",
+    "expectedValue": 455809,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q368",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2023-03"
+    },
+    "question": "How much new MRR did we add in March 2023?",
+    "expectedValue": 18002,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q369",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2023-10"
+    },
+    "question": "How many active customers did we have in October 2023?",
+    "expectedValue": 931,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q370",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2023-05"
+    },
+    "question": "What was ARPU in May 2023?",
+    "expectedValue": 174.71,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q371",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2023-04"
+    },
+    "question": "How many new customers signed up in April 2023?",
+    "expectedValue": 84,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q372",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-07"
+    },
+    "question": "How many support tickets were created in July 2025?",
+    "expectedValue": 178,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q373",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-09",
+      "category": "technical"
+    },
+    "question": "How many technical support tickets were created in September 2024?",
+    "expectedValue": 15,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q374",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2024-08"
+    },
+    "question": "What was average CSAT in August 2024?",
+    "expectedValue": 2.59,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q375",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2024-07"
+    },
+    "question": "What was the average support ticket resolution time (in days) in July 2024?",
+    "expectedValue": -26.23,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q376",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2025-04"
+    },
+    "question": "What was the refund rate in April 2025?",
+    "expectedValue": 2.17,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q377",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2025-02"
+    },
+    "question": "What share of support tickets created in February 2025 were high or urgent priority?",
+    "expectedValue": 52.38,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q378",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-11",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in November 2023?",
+    "expectedValue": 3990,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q379",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-02"
+    },
+    "question": "What was the monthly churn rate in February 2025?",
+    "expectedValue": 0.5,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q380",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-12",
+      "plan_tier": "Enterprise"
+    },
+    "question": "What was the churn rate for the Enterprise plan in December 2023?",
+    "expectedValue": 0.67,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q381",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-07",
+      "region": "APAC"
+    },
+    "question": "What was the churn rate in the APAC region in July 2025?",
+    "expectedValue": 0.26,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q382",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2025-05"
+    },
+    "question": "What was total MRR in May 2025?",
+    "expectedValue": 489177,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q383",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2023-09"
+    },
+    "question": "How much new MRR did we add in September 2023?",
+    "expectedValue": 17666,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q384",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2025-06"
+    },
+    "question": "How many active customers did we have in June 2025?",
+    "expectedValue": 2598,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q385",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2025-06"
+    },
+    "question": "What was ARPU in June 2025?",
+    "expectedValue": 193.33,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q386",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2024-04"
+    },
+    "question": "How many new customers signed up in April 2024?",
+    "expectedValue": 97,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q387",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-07"
+    },
+    "question": "How many support tickets were created in July 2024?",
+    "expectedValue": 62,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q388",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-02",
+      "category": "feature_request"
+    },
+    "question": "How many feature_request support tickets were created in February 2024?",
+    "expectedValue": 9,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q389",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2023-02"
+    },
+    "question": "What was average CSAT in February 2023?",
+    "expectedValue": 3.33,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q390",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2024-03"
+    },
+    "question": "What was the average support ticket resolution time (in days) in March 2024?",
+    "expectedValue": -208,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q391",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2023-10"
+    },
+    "question": "What was the refund rate in October 2023?",
+    "expectedValue": 2.15,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q392",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2025-05"
+    },
+    "question": "What share of support tickets created in May 2025 were high or urgent priority?",
+    "expectedValue": 48.99,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q393",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-08",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in August 2023?",
+    "expectedValue": 134239,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q394",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-10"
+    },
+    "question": "What was the monthly churn rate in October 2024?",
+    "expectedValue": 0.58,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q395",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-11",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in November 2023?",
+    "expectedValue": 0.79,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q396",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-01",
+      "region": "EMEA"
+    },
+    "question": "What was the churn rate in the EMEA region in January 2024?",
+    "expectedValue": 0.91,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q397",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2025-07"
+    },
+    "question": "What was total MRR in July 2025?",
+    "expectedValue": 519001,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q398",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2024-07"
+    },
+    "question": "How much new MRR did we add in July 2024?",
+    "expectedValue": 20722,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q399",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2024-09"
+    },
+    "question": "How many active customers did we have in September 2024?",
+    "expectedValue": 1908,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q400",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2025-01"
+    },
+    "question": "What was ARPU in January 2025?",
+    "expectedValue": 191.02,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q401",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2024-06"
+    },
+    "question": "How many new customers signed up in June 2024?",
+    "expectedValue": 97,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q402",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-06"
+    },
+    "question": "How many support tickets were created in June 2024?",
+    "expectedValue": 46,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q403",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-11",
+      "category": "onboarding"
+    },
+    "question": "How many onboarding support tickets were created in November 2023?",
+    "expectedValue": 5,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q404",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2023-10"
+    },
+    "question": "What was average CSAT in October 2023?",
+    "expectedValue": 2.52,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q405",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2025-02"
+    },
+    "question": "What was the average support ticket resolution time (in days) in February 2025?",
+    "expectedValue": 32.99,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q406",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2025-03"
+    },
+    "question": "What was the refund rate in March 2025?",
+    "expectedValue": 2.31,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q407",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2024-03"
+    },
+    "question": "What share of support tickets created in March 2024 were high or urgent priority?",
+    "expectedValue": 47.37,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q408",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2025-01",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in January 2025?",
+    "expectedValue": 416310,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q409",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-05"
+    },
+    "question": "What was the monthly churn rate in May 2023?",
+    "expectedValue": 1.44,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q410",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-06",
+      "plan_tier": "Starter"
+    },
+    "question": "What was the churn rate for the Starter plan in June 2024?",
+    "expectedValue": 2.14,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q411",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-05",
+      "region": "EMEA"
+    },
+    "question": "What was the churn rate in the EMEA region in May 2024?",
+    "expectedValue": 0.44,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q412",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2023-12"
+    },
+    "question": "What was total MRR in December 2023?",
+    "expectedValue": 202438,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q413",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2024-01"
+    },
+    "question": "How much new MRR did we add in January 2024?",
+    "expectedValue": 22928,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q414",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2023-09"
+    },
+    "question": "How many active customers did we have in September 2023?",
+    "expectedValue": 843,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q415",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2024-10"
+    },
+    "question": "What was ARPU in October 2024?",
+    "expectedValue": 189.86,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q416",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2023-12"
+    },
+    "question": "How many new customers signed up in December 2023?",
+    "expectedValue": 103,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q417",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-05"
+    },
+    "question": "How many support tickets were created in May 2024?",
+    "expectedValue": 57,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q418",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-03",
+      "category": "bug"
+    },
+    "question": "How many bug support tickets were created in March 2025?",
+    "expectedValue": 22,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q419",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2023-06"
+    },
+    "question": "What was average CSAT in June 2023?",
+    "expectedValue": 3.29,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q420",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2023-12"
+    },
+    "question": "What was the average support ticket resolution time (in days) in December 2023?",
+    "expectedValue": -268.79,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q421",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2025-07"
+    },
+    "question": "What was the refund rate in July 2025?",
+    "expectedValue": 1.61,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q422",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2024-11"
+    },
+    "question": "What share of support tickets created in November 2024 were high or urgent priority?",
+    "expectedValue": 46.99,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q423",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2024-03",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in March 2024?",
+    "expectedValue": 5705,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q424",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-12"
+    },
+    "question": "What was the monthly churn rate in December 2023?",
+    "expectedValue": 1.17,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q425",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-06",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in June 2024?",
+    "expectedValue": 0.69,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q426",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-03",
+      "region": "NA"
+    },
+    "question": "What was the churn rate in the NA region in March 2023?",
+    "expectedValue": 0,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q427",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2025-06"
+    },
+    "question": "What was total MRR in June 2025?",
+    "expectedValue": 502284,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q428",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2023-02"
+    },
+    "question": "How much new MRR did we add in February 2023?",
+    "expectedValue": 13772,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q429",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2024-08"
+    },
+    "question": "How many active customers did we have in August 2024?",
+    "expectedValue": 1829,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q430",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2023-04"
+    },
+    "question": "What was ARPU in April 2023?",
+    "expectedValue": 177.26,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q431",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2024-08"
+    },
+    "question": "How many new customers signed up in August 2024?",
+    "expectedValue": 110,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q432",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-07"
+    },
+    "question": "How many support tickets were created in July 2023?",
+    "expectedValue": 19,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q433",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-11",
+      "category": "bug"
+    },
+    "question": "How many bug support tickets were created in November 2023?",
+    "expectedValue": 4,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q434",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2024-09"
+    },
+    "question": "What was average CSAT in September 2024?",
+    "expectedValue": 2.77,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q435",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2024-11"
+    },
+    "question": "What was the average support ticket resolution time (in days) in November 2024?",
+    "expectedValue": 50.9,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q436",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2024-02"
+    },
+    "question": "What was the refund rate in February 2024?",
+    "expectedValue": 1.25,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q437",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2023-10"
+    },
+    "question": "What share of support tickets created in October 2023 were high or urgent priority?",
+    "expectedValue": 51.52,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q438",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-09",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in September 2023?",
+    "expectedValue": 3480,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q439",
+    "templateId": "monthly_churn_rate",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-09"
+    },
+    "question": "What was the monthly churn rate in September 2024?",
+    "expectedValue": 0.74,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q440",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-01",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in January 2025?",
+    "expectedValue": 0.17,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q441",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-10",
+      "region": "APAC"
+    },
+    "question": "What was the churn rate in the APAC region in October 2023?",
+    "expectedValue": 1.3,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q442",
+    "templateId": "mrr",
+    "metricName": "mrr",
+    "params": {
+      "month": "2023-04"
+    },
+    "question": "What was total MRR in April 2023?",
+    "expectedValue": 64168,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q443",
+    "templateId": "new_mrr",
+    "metricName": "new_mrr",
+    "params": {
+      "month": "2023-10"
+    },
+    "question": "How much new MRR did we add in October 2023?",
+    "expectedValue": 17462,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q444",
+    "templateId": "active_customers",
+    "metricName": "active_customers",
+    "params": {
+      "month": "2025-02"
+    },
+    "question": "How many active customers did we have in February 2025?",
+    "expectedValue": 2297,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q445",
+    "templateId": "arpu",
+    "metricName": "arpu",
+    "params": {
+      "month": "2023-02"
+    },
+    "question": "What was ARPU in February 2023?",
+    "expectedValue": 193.86,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q446",
+    "templateId": "new_customers",
+    "metricName": "new_customers",
+    "params": {
+      "month": "2025-06"
+    },
+    "question": "How many new customers signed up in June 2025?",
+    "expectedValue": 83,
+    "requiredTables": [
+      "customers"
+    ]
+  },
+  {
+    "id": "q447",
+    "templateId": "ticket_volume",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-04"
+    },
+    "question": "How many support tickets were created in April 2023?",
+    "expectedValue": 8,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q448",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-10",
+      "category": "onboarding"
+    },
+    "question": "How many onboarding support tickets were created in October 2023?",
+    "expectedValue": 9,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q449",
+    "templateId": "avg_csat",
+    "metricName": "avg_csat",
+    "params": {
+      "month": "2023-03"
+    },
+    "question": "What was average CSAT in March 2023?",
+    "expectedValue": 4.25,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q450",
+    "templateId": "avg_resolution_days",
+    "metricName": "avg_resolution_time_days",
+    "params": {
+      "month": "2024-04"
+    },
+    "question": "What was the average support ticket resolution time (in days) in April 2024?",
+    "expectedValue": -165.21,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q451",
+    "templateId": "refund_rate",
+    "metricName": "refund_rate",
+    "params": {
+      "month": "2023-02"
+    },
+    "question": "What was the refund rate in February 2023?",
+    "expectedValue": 1.97,
+    "requiredTables": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "q452",
+    "templateId": "high_priority_ticket_share",
+    "metricName": "high_priority_ticket_share",
+    "params": {
+      "month": "2024-09"
+    },
+    "question": "What share of support tickets created in September 2024 were high or urgent priority?",
+    "expectedValue": 57.75,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q453",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2024-01",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in January 2024?",
+    "expectedValue": 4895,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q454",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-09",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in September 2024?",
+    "expectedValue": 1.02,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q455",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-02",
+      "region": "LATAM"
+    },
+    "question": "What was the churn rate in the LATAM region in February 2024?",
+    "expectedValue": 0.57,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q456",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-07",
+      "category": "onboarding"
+    },
+    "question": "How many onboarding support tickets were created in July 2023?",
+    "expectedValue": 3,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q457",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2024-11",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in November 2024?",
+    "expectedValue": 8395,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q458",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-11",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in November 2024?",
+    "expectedValue": 0.56,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q459",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-03",
+      "region": "APAC"
+    },
+    "question": "What was the churn rate in the APAC region in March 2025?",
+    "expectedValue": 0.43,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q460",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-10",
+      "category": "billing"
+    },
+    "question": "How many billing support tickets were created in October 2023?",
+    "expectedValue": 2,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q461",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2025-04",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in April 2025?",
+    "expectedValue": 460272,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q462",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-07",
+      "plan_tier": "Starter"
+    },
+    "question": "What was the churn rate for the Starter plan in July 2023?",
+    "expectedValue": 0.56,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q463",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-11",
+      "region": "NA"
+    },
+    "question": "What was the churn rate in the NA region in November 2024?",
+    "expectedValue": 0.84,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q464",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-05",
+      "category": "billing"
+    },
+    "question": "How many billing support tickets were created in May 2024?",
+    "expectedValue": 6,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q465",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2024-11",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in November 2024?",
+    "expectedValue": 385770,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q466",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-07",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in July 2024?",
+    "expectedValue": 1.11,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q467",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-05",
+      "region": "LATAM"
+    },
+    "question": "What was the churn rate in the LATAM region in May 2023?",
+    "expectedValue": 1.77,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q468",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-03",
+      "category": "technical"
+    },
+    "question": "How many technical support tickets were created in March 2024?",
+    "expectedValue": 13,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q469",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2024-09",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in September 2024?",
+    "expectedValue": 7785,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q470",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-03",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in March 2023?",
+    "expectedValue": 0,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q471",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-08",
+      "region": "APAC"
+    },
+    "question": "What was the churn rate in the APAC region in August 2023?",
+    "expectedValue": 1.11,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q472",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-05",
+      "category": "bug"
+    },
+    "question": "How many bug support tickets were created in May 2025?",
+    "expectedValue": 35,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q473",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2024-06",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in June 2024?",
+    "expectedValue": 6735,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q474",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-02",
+      "plan_tier": "Starter"
+    },
+    "question": "What was the churn rate for the Starter plan in February 2024?",
+    "expectedValue": 1.08,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q475",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-05",
+      "region": "LATAM"
+    },
+    "question": "What was the churn rate in the LATAM region in May 2024?",
+    "expectedValue": 0.97,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q476",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-02",
+      "category": "bug"
+    },
+    "question": "How many bug support tickets were created in February 2024?",
+    "expectedValue": 12,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q477",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2025-06",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in June 2025?",
+    "expectedValue": 10920,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q478",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-12",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in December 2023?",
+    "expectedValue": 1.45,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q479",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-10",
+      "region": "LATAM"
+    },
+    "question": "What was the churn rate in the LATAM region in October 2024?",
+    "expectedValue": 0.56,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q480",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-02",
+      "category": "bug"
+    },
+    "question": "How many bug support tickets were created in February 2023?",
+    "expectedValue": 1,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q481",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2024-02",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in February 2024?",
+    "expectedValue": 5400,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q482",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-01",
+      "plan_tier": "Scale"
+    },
+    "question": "What was the churn rate for the Scale plan in January 2024?",
+    "expectedValue": 1.2,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q483",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-12",
+      "region": "EMEA"
+    },
+    "question": "What was the churn rate in the EMEA region in December 2023?",
+    "expectedValue": 0.34,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q484",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-06",
+      "category": "technical"
+    },
+    "question": "How many technical support tickets were created in June 2024?",
+    "expectedValue": 9,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q485",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2024-08",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in August 2024?",
+    "expectedValue": 345432,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q486",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-04",
+      "plan_tier": "Enterprise"
+    },
+    "question": "What was the churn rate for the Enterprise plan in April 2025?",
+    "expectedValue": 0.13,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q487",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-04",
+      "region": "LATAM"
+    },
+    "question": "What was the churn rate in the LATAM region in April 2025?",
+    "expectedValue": 0.31,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q488",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-06",
+      "category": "onboarding"
+    },
+    "question": "How many onboarding support tickets were created in June 2025?",
+    "expectedValue": 38,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q489",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2025-01",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in January 2025?",
+    "expectedValue": 9130,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q490",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-03",
+      "plan_tier": "Scale"
+    },
+    "question": "What was the churn rate for the Scale plan in March 2025?",
+    "expectedValue": 0.29,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q491",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-02",
+      "region": "NA"
+    },
+    "question": "What was the churn rate in the NA region in February 2023?",
+    "expectedValue": 4.35,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q492",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2024-01",
+      "category": "feature_request"
+    },
+    "question": "How many feature_request support tickets were created in January 2024?",
+    "expectedValue": 7,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q493",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2023-03",
+      "category": "subscription"
+    },
+    "question": "How much subscription revenue did we charge in March 2023?",
+    "expectedValue": 50829,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q494",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2024-08",
+      "plan_tier": "Starter"
+    },
+    "question": "What was the churn rate for the Starter plan in August 2024?",
+    "expectedValue": 1.91,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q495",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2023-06",
+      "region": "APAC"
+    },
+    "question": "What was the churn rate in the APAC region in June 2023?",
+    "expectedValue": 3.2,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q496",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2025-05",
+      "category": "feature_request"
+    },
+    "question": "How many feature_request support tickets were created in May 2025?",
+    "expectedValue": 29,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  },
+  {
+    "id": "q497",
+    "templateId": "revenue_by_product_category",
+    "metricName": "revenue_by_product_category",
+    "params": {
+      "month": "2025-02",
+      "category": "addon"
+    },
+    "question": "How much addon revenue did we charge in February 2025?",
+    "expectedValue": 9455,
+    "requiredTables": [
+      "transactions",
+      "subscriptions",
+      "products"
+    ]
+  },
+  {
+    "id": "q498",
+    "templateId": "churn_rate_by_plan",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-07",
+      "plan_tier": "Growth"
+    },
+    "question": "What was the churn rate for the Growth plan in July 2025?",
+    "expectedValue": 0.14,
+    "requiredTables": [
+      "subscriptions"
+    ]
+  },
+  {
+    "id": "q499",
+    "templateId": "churn_rate_by_region",
+    "metricName": "monthly_churn_rate",
+    "params": {
+      "month": "2025-03",
+      "region": "NA"
+    },
+    "question": "What was the churn rate in the NA region in March 2025?",
+    "expectedValue": 1.16,
+    "requiredTables": [
+      "subscriptions",
+      "customers"
+    ]
+  },
+  {
+    "id": "q500",
+    "templateId": "ticket_volume_by_category",
+    "metricName": "ticket_volume",
+    "params": {
+      "month": "2023-10",
+      "category": "technical"
+    },
+    "question": "How many technical support tickets were created in October 2023?",
+    "expectedValue": 7,
+    "requiredTables": [
+      "support_tickets"
+    ]
+  }
+]

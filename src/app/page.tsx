@@ -1,69 +1,132 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useEffect, useState } from "react";
+import { ResultPanel, type PipelineResult } from "@/components/ResultPanel";
+
+interface RoleInfo {
+  id: string;
+  label: string;
+  description: string;
+}
+
+const EXAMPLE_QUESTIONS = [
+  "What was the monthly churn rate in March 2024?",
+  "What is the average lifetime value of an Enterprise customer?",
+  "How many active customers did we have in June 2024?",
+  "What share of tickets in January 2024 were high or urgent priority?",
+  "What was total MRR in December 2023?",
+  "What is Jane Smith's email address?",
+];
+
+export default function AskPage() {
+  const [roles, setRoles] = useState<RoleInfo[]>([]);
+  const [role, setRole] = useState("admin");
+  const [question, setQuestion] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [semantic, setSemantic] = useState<PipelineResult | null>(null);
+  const [raw, setRaw] = useState<PipelineResult | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch("/api/roles")
+      .then((r) => r.json())
+      .then(setRoles)
+      .catch(() => {});
+  }, []);
+
+  async function ask(q: string) {
+    if (!q.trim() || loading) return;
+    setLoading(true);
+    setError(null);
+    setSemantic(null);
+    setRaw(null);
+    try {
+      const res = await fetch("/api/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: q, mode: "both", role }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? "Request failed");
+      setSemantic(data.semantic);
+      setRaw(data.raw);
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="mx-auto max-w-6xl px-6 py-8 flex flex-col gap-6">
+      <section className="flex flex-col gap-3">
+        <h1 className="text-2xl font-semibold tracking-tight">Ask your data</h1>
+        <p className="text-sm text-black/60 dark:text-white/60 max-w-3xl">
+          Every question runs through two independent pipelines: a naive <strong>raw text-to-SQL</strong> baseline
+          (the model sees only the physical schema) and the <strong>AI Data Plane</strong> (the model sees a
+          role-scoped semantic layer — retrieved business concepts, metric definitions and a glossary — instead of
+          raw tables). Both are guarded against schema hallucination and permission violations before anything
+          executes.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-3">
+          <textarea
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
+            placeholder="e.g. What was the monthly churn rate in March 2024?"
+            rows={2}
+            className="flex-1 rounded-lg border border-black/15 dark:border-white/15 bg-transparent p-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-black/20 dark:focus:ring-white/20"
+          />
+          <div className="flex sm:flex-col gap-2">
+            <select
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+              className="rounded-lg border border-black/15 dark:border-white/15 bg-transparent px-3 py-2 text-sm"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              {roles.map((r) => (
+                <option key={r.id} value={r.id}>
+                  {r.label}
+                </option>
+              ))}
+            </select>
+            <button
+              onClick={() => ask(question)}
+              disabled={loading}
+              className="rounded-lg bg-black text-white dark:bg-white dark:text-black px-4 py-2 text-sm font-medium disabled:opacity-50"
             >
-              Learning
-            </a>{" "}
-            center.
+              {loading ? "Running…" : "Compare pipelines"}
+            </button>
+          </div>
+        </div>
+        {roles.length > 0 && (
+          <p className="text-xs text-black/40 dark:text-white/40">
+            {roles.find((r) => r.id === role)?.description}
           </p>
+        )}
+
+        <div className="flex flex-wrap gap-2">
+          {EXAMPLE_QUESTIONS.map((q) => (
+            <button
+              key={q}
+              onClick={() => {
+                setQuestion(q);
+                ask(q);
+              }}
+              className="text-xs px-2.5 py-1 rounded-full border border-black/10 dark:border-white/15 hover:bg-black/5 dark:hover:bg-white/10"
+            >
+              {q}
+            </button>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+        {error && <p className="text-sm text-red-600">{error}</p>}
+      </section>
+
+      {(loading || semantic || raw) && (
+        <section className="grid md:grid-cols-2 gap-4">
+          <ResultPanel title="AI Data Plane" subtitle="semantic layer + permission layer + query planner" result={semantic} />
+          <ResultPanel title="Raw text-to-SQL (baseline)" subtitle="full schema dumped into the prompt, no guardrails" result={raw} />
+        </section>
+      )}
     </div>
   );
 }
